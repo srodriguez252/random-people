@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './App.css';
 
 function App() {
   
@@ -15,21 +15,27 @@ function App() {
   
 
   return (
-    <div className="App">
+    <div className="frame" >
         <h1>Random People</h1>
-        <button className="fetch-button" onClick={fetchPeople}>Show Person</button>
-
+        
+        <button className="button-74" onClick={fetchPeople}>Show Person</button>
+        
         {people && people.results.map((person , index) => {
 
         //const fullname = JSON.stringify(person.name);
         const fullname = person.name.title + ' ' + person.name.first + ' ' +person.name.last;
-
+        const picture = person.picture.thumbnail;
         return(
         
-        <div className="person-details" key={index}>
+        <div key={index}>
+            <br/>
+            <img src={picture} alt="Person"/>
+            <p >{fullname}</p>
+            <p>{person.dob.age}</p>
             <p>{person.gender}</p>
-            <p>{fullname}</p>
-            <p></p>
+            <p>{person.email}</p>
+            
+            
         </div>
         )}
         )}

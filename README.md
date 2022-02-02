@@ -1,1 +1,1 @@
-React app that retreives data from random people using the API from: https://randomuser.me
+React app that retrieves data from random people using the API from: https://randomuser.me
